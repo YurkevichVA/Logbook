@@ -1,0 +1,322 @@
+﻿<Window x:Class="Logbook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Logbook"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1050">
+    <Grid>
+        <StackPanel Margin="30,0,0,0">
+            <DockPanel Background="#02A8F4" Height="50">
+                <Button
+                        DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Height="40">
+                    <Button.Content>
+                        <Image Source="\Pics\6toppanel.png"/>
+                    </Button.Content>
+                </Button>
+                <Button
+                        DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Margin="15,0,15,0"
+                        Height="40">
+                    <Button.Content>
+                        <Image Source="\Pics\5toppanel.png"/>
+                    </Button.Content>
+                </Button>
+                <Button
+                        DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Height="40">
+                    <Button.Content>
+                        <Image Source="\Pics\4toppanel.png"/>
+                    </Button.Content>
+                </Button>
+                <Button
+                        DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Height="40">
+                    <Button.Content>
+                        <Image Source="\Pics\3toppanel.png"/>
+                    </Button.Content>
+                </Button>
+                <Button
+                        DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Height="40">
+                    <Button.Content>
+                        <Image Source="\Pics\2toppanel.png"/>
+                    </Button.Content>
+                </Button>
+                <Button 
+                        DockPanel.Dock="Right"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Margin="0,0,20,0"
+                        Height="40">
+                    <Button.Content>
+                        <Image Source="\Pics\1toppanel.png"/>
+                    </Button.Content>
+                </Button>
+            </DockPanel>
+            <DockPanel>
+                <TextBlock Margin="0,15,15,15" HorizontalAlignment="Center" VerticalAlignment="Center">22 вересня, Четвер</TextBlock>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,15,15,15" Content="Відмітити за іншу дату"></Button>
+            </DockPanel>
+            <Grid>
+                <TabControl>
+                    <TabControl.Resources>
+                        <Style TargetType="{x:Type TabItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TabItem}">
+                                        <Grid>
+                                            <Border Name="Border" Background="#B9E7FF" Margin="0,0,0,0" BorderBrush="Transparent" BorderThickness="0" CornerRadius="10">
+                                                <ContentPresenter x:Name="ContentSite" ContentSource="Header" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4,2,5,2" RecognizesAccessKey="True"/>
+                                            </Border>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="White" />
+                                                <Setter Property="Foreground" Value="#3483D5"></Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="Border" Property="Background" Value="#FF6E6C67" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background" Value="#FF6E6C67" />
+                            <Setter Property="Height" Value="40" />
+                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="UseLayoutRounding" Value="False"/>
+                        </Style>
+                    </TabControl.Resources>
+                    <TabItem Header="1 пара"></TabItem>
+                    <TabItem Header="2 пара"></TabItem>
+                    <TabItem Header="3 пара"></TabItem>
+                    <TabItem Header="4 пара"></TabItem>
+                    <TabItem Header="5 пара">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10"></ColumnDefinition>
+                                <ColumnDefinition Width="60"></ColumnDefinition>
+                                <ColumnDefinition Width="200"></ColumnDefinition>
+                                <ColumnDefinition Width="95"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="2" HorizontalAlignment="Center">ПІБ студента</TextBlock>
+                            <TextBlock Grid.Column="3" HorizontalAlignment="Center">Був в Mystat</TextBlock>
+                            <RadioButton Grid.Column="4" Content="Відмітити всіх" HorizontalAlignment="Center" Checked="RadioButton_Checked"></RadioButton>
+                            <TextBlock Grid.Column="5" HorizontalAlignment="Center">Контрольні роботи</TextBlock>
+                            <TextBlock Grid.Column="6" HorizontalAlignment="Center">Робота в класі</TextBlock>
+                            <TextBlock Grid.Column="7" HorizontalAlignment="Center" Name="DimondsAv">5</TextBlock>
+                            <TextBlock Grid.Column="8" HorizontalAlignment="Center">Коментар</TextBlock>
+
+                            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">1</TextBlock>
+                            <Ellipse Height="60" Width="60" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="\Pics\ZubenkoMPPic.jpg" AlignmentX="Center" AlignmentY="Center" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center">Зубєнко Міхаіл Пєтровіч</TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center">23.09.22</TextBlock>
+                            <Grid Grid.Row="1" Grid.Column="4" Margin="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <GroupBox x:Name="FirstGroup" Grid.ColumnSpan="3" BorderBrush="Transparent"></GroupBox>
+                                <RadioButton Name="Present" Grid.Column="0" GroupName="FirstGroup" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Green"></RadioButton>
+                                <RadioButton Grid.Column="1" GroupName="FirstGroup" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Yellow"></RadioButton>
+                                <RadioButton Grid.Column="2" GroupName="FirstGroup" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Red"></RadioButton>
+                            </Grid>
+                            <ComboBox Name="Reviews" Grid.Row="1" Grid.Column="5" Width="70" Height="30">
+                                <TextBlock>-</TextBlock>
+                                <TextBlock>1</TextBlock>
+                                <TextBlock>2</TextBlock>
+                                <TextBlock>3</TextBlock>
+                                <TextBlock>4</TextBlock>
+                                <TextBlock>5</TextBlock>
+                                <TextBlock>6</TextBlock>
+                                <TextBlock>7</TextBlock>
+                                <TextBlock>8</TextBlock>
+                                <TextBlock>9</TextBlock>
+                                <TextBlock>10</TextBlock>
+                                <TextBlock>11</TextBlock>
+                                <TextBlock>12</TextBlock>
+                            </ComboBox>
+                            <ComboBox Name="ClassWork" Grid.Row="1" Grid.Column="6" Width="70" Height="30">
+                                <TextBlock>-</TextBlock>
+                                <TextBlock>1</TextBlock>
+                                <TextBlock>2</TextBlock>
+                                <TextBlock>3</TextBlock>
+                                <TextBlock>4</TextBlock>
+                                <TextBlock>5</TextBlock>
+                                <TextBlock>6</TextBlock>
+                                <TextBlock>7</TextBlock>
+                                <TextBlock>8</TextBlock>
+                                <TextBlock>9</TextBlock>
+                                <TextBlock>10</TextBlock>
+                                <TextBlock>11</TextBlock>
+                                <TextBlock>12</TextBlock>
+                            </ComboBox>
+                            <Grid Grid.Row="1" Grid.Column="7" Margin="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" Width="20" Height="20"
+                                          Name="FirstDimond" Checked="FirstDimond_Checked"></CheckBox>
+                                <CheckBox Grid.Column="1" Width="20" Height="20"
+                                          Name="SecondDimond" Checked="FirstDimond_Checked"></CheckBox>
+                                <CheckBox Grid.Column="2" Width="20" Height="20"
+                                          Name="ThirdDimond" Checked="FirstDimond_Checked"></CheckBox>
+                                <Button Grid.Column="3" Width="20" Height="20"
+                                        Background="Transparent" BorderBrush="Transparent">
+                                    <Button.Content>
+                                        <Image Source="\Pics\ClearDimondsBtn.png"></Image>
+                                    </Button.Content>
+                                </Button>
+                            </Grid>
+                            <Button Grid.Row="1" Grid.Column="8" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"
+                                    Background="Transparent" BorderBrush="Transparent">
+                                <Button.Content>
+                                    <Image Source="\Pics\CommentBtn.png"/>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="6 пара"></TabItem>
+                    <TabItem Header="7 пара"></TabItem>
+                    <TabItem Header="8 пара"></TabItem>
+                    <TabItem Header="9 пара"></TabItem>
+                    <TabItem Header="10 пара"></TabItem>
+                    <TabItem Header="11 пара"></TabItem>
+                    <TabItem Header="12 пара"></TabItem>
+                    <TabItem Header="13 пара"></TabItem>
+                    <TabItem Header="14 пара"></TabItem>
+                    <TabItem Header="15 пара"></TabItem>
+                    <TabItem Header="16 пара"></TabItem>
+                    <TabItem Header="17 пара"></TabItem>
+                </TabControl>
+            </Grid>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel 
+                Width="30"
+                Background="#0187CF"
+                Orientation="Vertical"
+                HorizontalAlignment="Left">
+                <Button BorderThickness="0"
+                        Background="Transparent"
+                        Margin="0,50,0,0">
+                    <Button.Content>
+                        <Image Source="\Pics\1.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0" 
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\2.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\3.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\4.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\5.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\6.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\7.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\8.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\9.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\10.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\11.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\12.jpg"/>
+                    </Button.Content>
+                </Button>
+                <Button BorderThickness="0"
+                        Background="Transparent">
+                    <Button.Content>
+                        <Image Source="\Pics\13.jpg"/>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

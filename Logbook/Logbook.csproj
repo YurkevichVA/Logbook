@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pics\1.jpg" />
+    <None Remove="Pics\10.jpg" />
+    <None Remove="Pics\11.jpg" />
+    <None Remove="Pics\12.jpg" />
+    <None Remove="Pics\13.jpg" />
+    <None Remove="Pics\1toppanel.png" />
+    <None Remove="Pics\2.jpg" />
+    <None Remove="Pics\2toppanel.png" />
+    <None Remove="Pics\3.jpg" />
+    <None Remove="Pics\3toppanel.png" />
+    <None Remove="Pics\4.jpg" />
+    <None Remove="Pics\4toppanel.png" />
+    <None Remove="Pics\5.jpg" />
+    <None Remove="Pics\5toppanel.png" />
+    <None Remove="Pics\6.jpg" />
+    <None Remove="Pics\6toppanel.png" />
+    <None Remove="Pics\7.jpg" />
+    <None Remove="Pics\8.jpg" />
+    <None Remove="Pics\9.jpg" />
+    <None Remove="Pics\ZubenkoMPPic.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pics\1.jpg" />
+    <Resource Include="Pics\10.jpg" />
+    <Resource Include="Pics\11.jpg" />
+    <Resource Include="Pics\12.jpg" />
+    <Resource Include="Pics\13.jpg" />
+    <Resource Include="Pics\1toppanel.png" />
+    <Resource Include="Pics\2.jpg" />
+    <Resource Include="Pics\2toppanel.png" />
+    <Resource Include="Pics\3.jpg" />
+    <Resource Include="Pics\3toppanel.png" />
+    <Resource Include="Pics\4.jpg" />
+    <Resource Include="Pics\4toppanel.png" />
+    <Resource Include="Pics\5.jpg" />
+    <Resource Include="Pics\5toppanel.png" />
+    <Resource Include="Pics\6.jpg" />
+    <Resource Include="Pics\6toppanel.png" />
+    <Resource Include="Pics\7.jpg" />
+    <Resource Include="Pics\8.jpg" />
+    <Resource Include="Pics\9.jpg" />
+    <Resource Include="Pics\ZubenkoMPPic.jpg" />
+  </ItemGroup>
+
+</Project>
